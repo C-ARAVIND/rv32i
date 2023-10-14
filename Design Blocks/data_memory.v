@@ -8,8 +8,8 @@ output [31:0]ReadData
     reg [31:0] Mem_for_data [1023:0];
 
     always @(posedge clk) begin
-            if(MemWrite) Mem_for_data[ALUResult] <= writedata;
+        if(MemWrite) Mem_for_data[ALUResult] <= writedata;
     end
     
-    assign ReadData = (~MemWrite) ? Mem_for_data[ALUResult[31:2]] : 32'bz;
+    assign ReadData = (!MemWrite) ? Mem_for_data[ALUResult] : 32'bz;
 endmodule

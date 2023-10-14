@@ -11,6 +11,7 @@ output reg [WIDTH-1:0] y
             ReadData:  y <= d1;
             PCPlus4:   y <= d2;
             ImmExt:    y <= d3;
+            default: y <= 32'bz;
         endcase
     end
 endmodule

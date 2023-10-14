@@ -14,7 +14,7 @@ output reg [31:0]DataOut
                 lw: DataOut <= ReadData;
                 lbu:DataOut <= {24'b0, ReadData[7:0]};
                 lhu:DataOut <= {16'b0, ReadData[15:0]};
-                default: DataOut <= 32'b0;
+                default: DataOut <= 32'bz;
             endcase
         end
     end
